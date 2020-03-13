@@ -6,19 +6,14 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
 # If modifying these scopes, delete the file token.pickle.
-SCOPES = ['https://www.googleapis.com/auth/documents.readonly']
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
-# The ID of a sample document.
-DOCUMENT_ID = '195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE'
+# The ID and range of a sample spreadsheet.
+SAMPLE_SPREADSHEET_ID = '1sN5YRkeZ2wRVEpGLRayJotYqQCRniCDVJpMlgrqEiRk'
+SAMPLE_RANGE_NAME = 'Реестр клиентов!A2:BK'
 
 def read():
-    """Shows basic usage of the Docs API.
-    Prints the title of a sample document.
-    """
     creds = None
-    # The file token.pickle stores the user's access and refresh tokens, and is
-    # created automatically when the authorization flow completes for the first
-    # time.
     if os.path.exists('token.pickle'):
         with open('token.pickle', 'rb') as token:
             creds = pickle.load(token)
@@ -34,10 +29,17 @@ def read():
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
 
-    service = build('docs', 'v1', credentials=creds)
+    service = build('sheets', 'v4', credentials=creds)
 
-    # Retrieve the documents contents from the Docs service.
-    document = service.documents().get(documentId=DOCUMENT_ID).execute()
+    # Call the Sheets API
+    sheet = service.spreadsheets()
+    result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,
+                                range=SAMPLE_RANGE_NAME).execute()
+    values = result.get('values', [])
 
-    print('The title of the document is: {}'.format(document.get('title')))
-    return document
+    if not values:
+        print('No data found.')
+    else:
+        print('Success.')
+
+    return values
