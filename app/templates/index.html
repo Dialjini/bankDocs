@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,7 +9,7 @@
 
     <script src="/static/js/jquery/jquery.min.js"></script>
     <script src="/static/js/jquery/jquery_mask.js"></script>
-
+    <script src = "/static/js/main.js"></script>
     <title>Bank filler</title>
 </head>
 
@@ -19,49 +17,69 @@
     <button onclick="$.ajax({
         url: '/sendPdf',
         type: 'GET',
-        data: {'id': 1},
+        data: {'id': 1, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
         dataType: 'html',
         success: function(data) {
             console.log(data);
-        }});">
-        1
+        }});">Анкета ВТБ
     </button>
     <button onclick="$.ajax({
         url: '/sendPdf',
         type: 'GET',
-        data: {'id': 2},
+        data: {'id': 2, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
         dataType: 'html',
         success: function(data) {
             console.log(data);
-        }});"> 2
+        }});">Согласия ВТБ
     </button>
     <button onclick="$.ajax({
         url: '/sendPdf',
         type: 'GET',
-        data: {'id': 3},
+        data: {'id': 3, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
         dataType: 'html',
         success: function(data) {
             console.log(data);
-        }});"> 3
+        }});">Справка ВТБ
     </button>
     <button onclick="$.ajax({
         url: '/sendPdf',
         type: 'GET',
-        data: {'id': 4},
+        data: {'id': 4, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
         dataType: 'html',
         success: function(data) {
             console.log(data);
-        }});"> 4
+        }});">Анкета Альфа банк
     </button>
     <button onclick="$.ajax({
         url: '/sendPdf',
         type: 'GET',
-        data: {'id': 5},
+        data: {'id': 5, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
         dataType: 'html',
         success: function(data) {
             console.log(data);
-        }});"> 5
+        }});">Анкета Дом РФ
     </button>
+    <button onclick="$.ajax({
+        url: '/sendPdf',
+        type: 'GET',
+        data: {'id': 6, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
+        dataType: 'html',
+        success: function(data) {
+            console.log(data);
+        }});">Согласия Дом РФ
+    </button>
+    <button onclick="$.ajax({
+        url: '/sendPdf',
+        type: 'GET',
+        data: {'id': 7, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
+        dataType: 'html',
+        success: function(data) {
+            console.log(data);
+        }});">Справка о доходах
+    </button>
+<hr>
+<select id="selector">
+</select>
 
 </body>
 </html>

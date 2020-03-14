@@ -12,7 +12,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 SAMPLE_SPREADSHEET_ID = '1sN5YRkeZ2wRVEpGLRayJotYqQCRniCDVJpMlgrqEiRk'
 SAMPLE_RANGE_NAME = 'Реестр клиентов!A2:BK'
 
-def read():
+def read(mode):
     creds = None
     if os.path.exists('token.pickle'):
         with open('token.pickle', 'rb') as token:
@@ -42,4 +42,16 @@ def read():
     else:
         print('Success.')
 
-    return values
+    if mode == 'data':
+        return values
+    elif mode == 'users':
+        users = []
+        flag = True
+        for i in values:
+            if not i:
+                flag = False
+            if flag:
+                users.append(i[3])
+        return users
+    else:
+        return 'BAD MODE'

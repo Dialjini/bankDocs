@@ -1,6 +1,8 @@
 from app import app
-from flask import render_template, request, send_from_directory
-from app import xlsx_creator
+from flask import render_template, request
+from app import xlsx_creator, word_creator, gdocs_reader
+import json
+
 
 
 
@@ -12,6 +14,13 @@ def index():
 
 @app.route('/sendPdf')
 def sendPdf():
-    return xlsx_creator.create(id=int(request.args['id']))
+    print(request.args['userid'])
+    if int(request.args['id']) != 7:
+        return xlsx_creator.create(id=int(request.args['id']))
+    else:
+        return word_creator.create()
 
 
+@app.route('/getUsers')
+def getUsers():
+    return json.dumps(gdocs_reader.read(mode='users'))
