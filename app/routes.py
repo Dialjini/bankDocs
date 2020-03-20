@@ -18,7 +18,7 @@ def sendPdf():
     if int(request.args['id']) != 7:
         return xlsx_creator.create(id=int(request.args['id']), userid=int(request.args['userid']))
     else:
-        return word_creator.create()
+        return word_creator.create(userid=int(request.args['userid']))
 
 
 @app.route('/getUsers')
