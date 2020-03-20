@@ -6,6 +6,20 @@ from app.gdocs_reader import read
 from datetime import datetime
 
 
+def spravkaFieldPicker(date):
+    month = date.month
+    years = []
+    year = date.year
+
+    for i in range(12):
+        years.append(str(year)[2:])
+        month -= 1
+        if month < 1:
+            month = 12
+            year = year - 1
+    return years
+
+
 def updateCheckboxValues(page, fields):
     for j in range(0, len(page['/Annots'])):
         writer_annot = page['/Annots'][j].getObject()
@@ -13,14 +27,6 @@ def updateCheckboxValues(page, fields):
             if writer_annot.get('/T') == field:
                 writer_annot.update({NameObject("/V"): NameObject(fields[field]),
                                      NameObject("/AS"): NameObject(fields[field])})
-
-needful = ['0 фиоV', '15 дата рожденияV', '2 снилсV', '4 телефонV', '8 мейлV', '25 фамилия последняя V', '26 дата измененияV',
-           '11?НОМЕР ЗАРПЛАТНОЙ КАРТЫ??', '30 должностьV', '31 доходV', 'стаж по месту 32V', 'по профилю 118V', 'общий 117V',
-           'название орги 119V', 'инн орги 120V', 'фактическрий адрес орги 121V', 'телефон орги 122V',
-           'добавочный номер 123V', 'сайт орги 33V', 'сумма с учетом взноса 38V, банк 39, 40V, сумма 41, 42V, марка авто 43V,'
-           'год приобретения 44V, стоимость по оценке 45V, недвижимость 46V, стоимость 47V, уполн лицо представителя 48V, '
-           'дата 49V, фио 50V, фио 53V, страховка 54V, наим и адрес партнера 55V, наратеус 56V, (ЦЕЛЬ КРЕДИТА 57),регион преобр 60V'
-           'сумма кредита 115V, срок кредита 61V, первый взнос 62V, ']
 
 
 def scen1(info, fields):
@@ -115,24 +121,183 @@ def scen1(info, fields):
             fields[i] = info[55]
         if iter == 60:
             fields[i] = info[58]
+        if iter == 11:
+            fields[i] = info[67]
         iter += 1
         if fields[i] is None:
             fields[i] = ''
 
 
-def scen2(info, fields):
-    iter = 0
-    for i in fields.keys():
-        iter += 1
-    return 'scen2'
-
 
 def scen3(info, fields):
     iter = 0
+    date = datetime.today()
     for i in fields.keys():
+        # fields[i] = iter
+        if iter == 0:
+            fields[i] = str(date.day)
+        if iter == 1:
+            fields[i] = str(['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа',
+                      'сентября', 'октября', 'ноября', 'декабря'][date.month - 1])
+        if iter == 2:
+            fields[i] = str(date.year)[2:]
+        if iter == 3:
+            fields[i] = info[3]
+        if iter == 4:
+            fields[i] = info[71].split('.')[0]
+        if iter == 5:
+            fields[i] = info[71].split('.')[1]
+        if iter == 6:
+            fields[i] = info[71].split('.')[2][2:]
+        if iter == 7:
+            fields[i] = info[25]
+        if iter == 8:
+            fields[i] = info[13][:65]
+        if iter == 9:
+            fields[i] = info[13][65:]
+        if iter == 10:
+            fields[i] = info[14]
+        if iter == 11:
+            fields[i] = info[50]
+        try:
+            if iter == 12:
+                fields[i] = info[30].split(', ')[0]
+            if iter == 14:
+                fields[i] = info[30].split(', ')[1]
+            if iter == 15:
+                fields[i] = info[30].split(', ')[2]
+        except Exception:
+            print('')
+        try:
+            if iter == 16:
+                fields[i] = info[30].split(', ')[3][0]
+            if iter == 73:
+                fields[i] = info[30].split(', ')[3][1]
+            if iter == 72:
+                fields[i] = info[30].split(', ')[3][2]
+            if iter == 71:
+                fields[i] = info[30].split(', ')[3][3]
+        except Exception:
+            print('')
+        try:
+            if 'офис' in info[30].split(', ')[4]:
+                if iter == 18:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][0]
+                if iter == 67:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][1]
+                if iter == 66:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][2]
+                if iter == 65:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][3]
+            else:
+                if iter == 17:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][0]
+                if iter == 70:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][1]
+                if iter == 69:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][2]
+                if iter == 68:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][3]
+        except Exception:
+            print('')
+        if iter == 19:
+            fields[i] = info[31]
+        try:
+            if iter == 20:
+                fields[i] = info[30].split(', ')[0]
+            if iter == 22:
+                fields[i] = info[30].split(', ')[1]
+            if iter == 23:
+                fields[i] = info[30].split(', ')[2]
+        except Exception:
+            print('')
+        try:
+            if iter == 24:
+                fields[i] = info[30].split(', ')[3][0]
+            if iter == 25:
+                fields[i] = info[30].split(', ')[3][1]
+            if iter == 26:
+                fields[i] = info[30].split(', ')[3][2]
+            if iter == 27:
+                fields[i] = info[30].split(', ')[3][3]
+        except Exception:
+            print('')
+        try:
+            if 'офис' in info[30].split(', ')[4]:
+                if iter == 32:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][0]
+                if iter == 33:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][1]
+                if iter == 34:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][2]
+                if iter == 35:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][3]
+            else:
+                if iter == 28:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][0]
+                if iter == 29:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][1]
+                if iter == 30:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][2]
+                if iter == 31:
+                    fields[i] = info[30].split(', ')[4].split(' ')[0][3]
+        except Exception:
+            print('')
+        if iter == 36:
+            fields[i] = info[31]
+        years = spravkaFieldPicker(date)
+        if iter == 37:
+            fields[i] = years[0]
+        if iter == 38:
+            fields[i] = years[1]
+        if iter == 39:
+            fields[i] = years[2]
+        if iter == 40:
+            fields[i] = years[3]
+        if iter == 41:
+            fields[i] = years[4]
+        if iter == 42:
+            fields[i] = years[5]
+        if iter == 43:
+            fields[i] = years[6]
+        if iter == 44:
+            fields[i] = years[7]
+        if iter == 45:
+            fields[i] = years[8]
+        if iter == 46:
+            fields[i] = years[9]
+        if iter == 47:
+            fields[i] = years[10]
+        if iter == 48:
+            fields[i] = years[11]
+        if iter == 49:
+            fields[i] = years[0]
+        if iter == 50:
+            fields[i] = info[26]
+        if iter == 51:
+            fields[i] = info[26]
+        if iter == 52:
+            fields[i] = info[26]
+        if iter == 53:
+            fields[i] = info[26]
+        if iter == 54:
+            fields[i] = info[26]
+        if iter == 55:
+            fields[i] = info[26]
+        if iter == 56:
+            fields[i] = info[26]
+        if iter == 57:
+            fields[i] = info[26]
+        if iter == 58:
+            fields[i] = info[26]
+        if iter == 59:
+            fields[i] = info[26]
+        if iter == 60:
+            fields[i] = info[26]
 
+        if fields[i] is None:
+            fields[i] = ''
         iter += 1
-    return 'scen3'
 
 
 def scen4(info, fields):
@@ -163,8 +328,6 @@ def docWriter(fields, id, userid):
     info = read(mode='data')[userid]
     if id == 1:
         scen1(info=info, fields=fields)
-    if id == 2:
-        scen2(info=info, fields=fields)
     if id == 3:
         scen3(info=info, fields=fields)
     if id == 4:
@@ -180,8 +343,6 @@ def cscen1(info, fields):
     for i in fields.keys():
         print(i, iter, fields[i])
         if iter == 13:
-            fields[i] = '/Yes'
-        if iter == 31:
             fields[i] = '/Yes'
         if iter == 81:
             fields[i] = '/Yes'
@@ -368,13 +529,19 @@ def cscen1(info, fields):
         elif info[63] == 'более 1000':
             if iter == 70:
                 fields[i] = '/Yes'
-        if info[69] == 'До 2 лет':
+        if info[69] == 'Да':
+            if iter == 30:
+                fields[i] = '/Yes'
+        elif info[69] == 'Нет':
+            if iter == 31:
+                fields[i] = '/Yes'
+        if info[70] == 'До 2 лет':
             if iter == 71:
                 fields[i] = '/Yes'
-        elif info[69] == 'от 2 до 5 лет':
+        elif info[70] == 'от 2 до 5 лет':
             if iter == 72:
                 fields[i] = '/Yes'
-        elif info[69] == 'свыше 5 лет':
+        elif info[70] == 'свыше 5 лет':
             if iter == 73:
                 fields[i] = '/Yes'
         if info[33] == 'Имею':
@@ -410,21 +577,6 @@ def cscen1(info, fields):
         elif info[43] == 'Иное':
             if iter == 88:
                 fields[i] = '/Yes'
-        ayaya = [', 2 рекламаV, 3 рек компанииV,'
-                 ' 4 рекомендация друзейV, 5 уже клиентV, (42соц наемV, 43 ком наемV, 44 собствV, 45 у родстB V, 46иноеV), '
-                 '7 женатV, 8 в разводеV, 9 вдоваV, 10 гражданский бракV, 11 холостV, 12 брачный контракт естьV, 13 немаV,'
-                 ' изменалось ли фио 14даV 15 неV, ребенки да/нет 1-36 37, 2-38 39, 3-40 41V'
-                 'образование: ниже среднего 16V, среднее 17V, средн спец 18V, неоконч высш 19V, высшее 20V, неск 21V, доп высшее 22V'
-                 'ученая степень 23V, МВА 24V, иное 25V, по найму 32V, срочно 33V, ИП 34V, собственник бизнеса 35V'
-                 'сфера деятельности орги: армия 47V, инф техн 48V, консалтинг 49V, медицина 50V, наука 51V, образование 52V, строительство 53V,'
-                 'оптовая/розничкая торговля 59V, органы власти и управления 60V, охрана 61V, ТЭК 62V, промышленность 63V, социалочка 64V,'
-                 'транспорт 54V, туризм 55V, услуги 56V, финансы 57V, другие отрасли 58V'
-                 'численность персонала: до 10 65V, 11-50 66V, 51-100 67V, 101-500 68V, 501-1000 69V, >1000 70V'
-                 'срок существования орги: до 2х лет 71V, от 2-5 72V, свыше 5 73V'
-                 'средства имею 177V, не имею 74V, авто имею 75V, не имею 76V, недвижимость не имею 176V, имею 178V'
-                 'основани возникновения права на недвижимость: покупка 84V, приватизация 85V, наследство 86V, дарение 87V, иное 88V'
-                 'банкротство да 77V, нет 78V, алиментные обязательства есть 79, нет 80, (особое по представителю 83)'
-                 '']
         if info[44] == 'Да':
             if iter == 77:
                 fields[i] = '/Yes'
@@ -442,18 +594,8 @@ def cscen1(info, fields):
                 fields[i] = '/Yes'
         iter += 1
 
-def cscen2(info, fields):
-    iter = 0
-    for i in fields.keys():
-        iter += 1
-    return 'scen2'
-
 
 def cscen3(info, fields):
-    iter = 0
-    for i in fields.keys():
-
-        iter += 1
     return 'scen3'
 
 
@@ -486,8 +628,6 @@ def docChecker(fields, id, userid):
     print(fields)
     if id == 1:
         cscen1(info=info, fields=fields)
-    if id == 2:
-        cscen2(info=info, fields=fields)
     if id == 3:
         cscen3(info=info, fields=fields)
     if id == 4:
@@ -499,10 +639,12 @@ def docChecker(fields, id, userid):
 
 
 def create(id, userid):
+    print('id = ' + str(id))
     if id == 1:
         pdf_path = os.path.dirname(__file__) + '/files/VTB_anketa.pdf'
     elif id == 2:
-        pdf_path = os.path.dirname(__file__) + '/files/VTB_accept.pdf'
+        return send_from_directory(directory=os.path.abspath(os.path.dirname(__file__) + '/files'),
+                                   filename='VTB_accept.pdf')
     elif id == 3:
         pdf_path = os.path.dirname(__file__) + '/files/VTB_spravka.pdf'
     elif id == 4:
@@ -538,4 +680,5 @@ def create(id, userid):
         with open(os.path.dirname(__file__) + '/files/downloaded.pdf', 'wb') as out:
             pdf_writer.write(out)
 
-    return str(id)
+    return send_from_directory(directory=os.path.abspath(os.path.dirname(__file__) + '/files'),
+                                   filename='downloaded.pdf')

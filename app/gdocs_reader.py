@@ -10,7 +10,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 # The ID and range of a sample spreadsheet.
 SAMPLE_SPREADSHEET_ID = '19rwYHvaG9lgMn_lFB1NLSZOHepksXIK-cMlDoYva9is'
-SAMPLE_RANGE_NAME = 'Реестр клиентов!A2:BS'
+SAMPLE_RANGE_NAME = 'Реестр клиентов!A2:BT'
 
 def read(mode):
     creds = None

@@ -14,68 +14,40 @@
 </head>
 
 <body>
-    <button onclick="$.ajax({
-        url: '/sendPdf',
-        type: 'GET',
-        data: {'id': 1, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
-        dataType: 'html',
-        success: function(data) {
-            console.log(data);
-        }});">Анкета ВТБ
+    <button onclick="const link = document.createElement('a');
+    link.href = `/sendPdf?id=1&userid=${document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value}`;
+    link.download = `Анкета_ВТБ.pdf`;
+    link.click();">Анкета ВТБ
     </button>
-    <button onclick="$.ajax({
-        url: '/sendPdf',
-        type: 'GET',
-        data: {'id': 2, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
-        dataType: 'html',
-        success: function(data) {
-            console.log(data);
-        }});">Согласия ВТБ
+    <button onclick="const link = document.createElement('a');
+    link.href = `/sendPdf?id=2&userid=${document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value}`;
+    link.download = `Согласия_ВТБ.pdf`;
+    link.click();">Согласия ВТБ
     </button>
-    <button onclick="$.ajax({
-        url: '/sendPdf',
-        type: 'GET',
-        data: {'id': 3, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
-        dataType: 'html',
-        success: function(data) {
-            console.log(data);
-        }});">Справка ВТБ
+    <button onclick="const link = document.createElement('a');
+    link.href = `/sendPdf?id=3&userid=${document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value}`;
+    link.download = `Справка_ВТБ.pdf`;
+    link.click();">Справка ВТБ
     </button>
-    <button onclick="$.ajax({
-        url: '/sendPdf',
-        type: 'GET',
-        data: {'id': 4, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
-        dataType: 'html',
-        success: function(data) {
-            console.log(data);
-        }});">Анкета Альфа банк
+    <button onclick="const link = document.createElement('a');
+    link.href = `/sendPdf?id=4&userid=${document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value}`;
+    link.download = `Анкета_Альфа_Банк.pdf`;
+    link.click();">Анкета Альфа банк
     </button>
-    <button onclick="$.ajax({
-        url: '/sendPdf',
-        type: 'GET',
-        data: {'id': 5, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
-        dataType: 'html',
-        success: function(data) {
-            console.log(data);
-        }});">Анкета Дом РФ
+    <button onclick="const link = document.createElement('a');
+    link.href = `/sendPdf?id=5&userid=${document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value}`;
+    link.download = `Анкета_Дом_РФ.pdf`;
+    link.click();">Анкета Дом РФ
     </button>
-    <button onclick="$.ajax({
-        url: '/sendPdf',
-        type: 'GET',
-        data: {'id': 6, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
-        dataType: 'html',
-        success: function(data) {
-            console.log(data);
-        }});">Согласия Дом РФ
+    <button onclick="const link = document.createElement('a');
+    link.href = `/sendPdf?id=6&userid=${document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value}`;
+    link.download = `Согласия_Дом_РФ.pdf`;
+    link.click();">Согласия Дом РФ
     </button>
-    <button onclick="$.ajax({
-        url: '/sendPdf',
-        type: 'GET',
-        data: {'id': 7, 'userid': document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value},
-        dataType: 'html',
-        success: function(data) {
-            console.log(data);
-        }});">Справка о доходах
+    <button onclick="const link = document.createElement('a');
+    link.href = `/sendPdf?id=7&userid=${document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value}`;
+    link.download = `Справка_о_доходах.docx`;
+    link.click();">Справка о доходах
     </button>
 <hr>
 <select id="selector">
