@@ -16,7 +16,7 @@ def index():
 def sendPdf():
     print(request.args['userid'])
     if int(request.args['id']) != 7:
-        return xlsx_creator.create(id=int(request.args['id']))
+        return xlsx_creator.create(id=int(request.args['id']), userid=int(request.args['userid']))
     else:
         return word_creator.create()
 
@@ -24,3 +24,9 @@ def sendPdf():
 @app.route('/getUsers')
 def getUsers():
     return json.dumps(gdocs_reader.read(mode='users'))
+
+
+@app.route('/getDoc')
+def getDoc():
+    print(gdocs_reader.read(mode='data'))
+    return json.dumps(gdocs_reader.read(mode='data'))
