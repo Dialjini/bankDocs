@@ -303,7 +303,7 @@ def scen3(info, fields):
 def scen4(info, fields):
     iter = 0
     for i in fields.keys():
-
+        print(fields[i])
         iter += 1
     return 'scen4'
 
@@ -312,16 +312,11 @@ def scen4(info, fields):
 def scen5(info, fields):
     iter = 0
     for i in fields.keys():
+        print(fields[i])
         iter += 1
     return 'scen5'
 
 
-def scen6(info, fields):
-    iter = 0
-    for i in fields.keys():
-
-        iter += 1
-    return 'scen6'
 
 
 def docWriter(fields, id, userid):
@@ -334,8 +329,6 @@ def docWriter(fields, id, userid):
         scen4(info=info, fields=fields)
     if id == 5:
         scen5(info=info, fields=fields)
-    if id == 6:
-        scen6(info=info, fields=fields)
 
 
 def cscen1(info, fields):
@@ -615,14 +608,6 @@ def cscen5(info, fields):
     return 'scen5'
 
 
-def cscen6(info, fields):
-    iter = 0
-    for i in fields.keys():
-
-        iter += 1
-    return 'scen6'
-
-
 def docChecker(fields, id, userid):
     info = read(mode='data')[userid]
     print(fields)
@@ -634,8 +619,6 @@ def docChecker(fields, id, userid):
         cscen4(info=info, fields=fields)
     if id == 5:
         cscen5(info=info, fields=fields)
-    if id == 6:
-        cscen6(info=info, fields=fields)
 
 
 def create(id, userid):
@@ -652,7 +635,8 @@ def create(id, userid):
     elif id == 5:
         pdf_path = os.path.dirname(__file__) + '/files/dom_rf_anketa.pdf'
     elif id == 6:
-        pdf_path = os.path.dirname(__file__) + '/files/dow_rf_accept.pdf'
+        return send_from_directory(directory=os.path.abspath(os.path.dirname(__file__) + '/files'),
+                                   filename='dow_rf_accept.pdf')
     else:
         return 'BAD ID'
 
