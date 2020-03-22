@@ -69,6 +69,6 @@ def create(userid):
                                         years[1][0], years[1][1], years[1][2], years[1][3], years[1][4],
                                         years[1][5], years[0][0], years[0][1], years[0][2], years[0][3],
                                         years[0][4], years[0][5], info[26]], doc=doc)
-    doc.save(os.path.dirname(__file__) + '/files/downloaded.xlsx')
+    doc.save(os.path.dirname(__file__) + '/files/downloaded.docx')
     return send_from_directory(directory=os.path.abspath(os.path.dirname(__file__) + '/files'),
-                                   filename='downloaded.xlsx')
+                                   filename='downloaded.docx')
