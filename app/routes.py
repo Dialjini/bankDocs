@@ -15,10 +15,10 @@ def index():
 @app.route('/sendPdf')
 def sendPdf():
     print(request.args['userid'])
-    if int(request.args['id']) != 7:
+    if int(request.args['id']) < 4:
         return xlsx_creator.create(id=int(request.args['id']), userid=int(request.args['userid']))
     else:
-        return word_creator.create(userid=int(request.args['userid']))
+        return word_creator.create(id=int(request.args['id']), userid=int(request.args['userid']))
 
 
 @app.route('/getUsers')

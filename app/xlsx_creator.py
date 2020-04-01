@@ -302,9 +302,9 @@ def scen3(info, fields):
 
 def scen4(info, fields):
     iter = 0
-    for i in fields.keys():
-        print(fields[i])
-        iter += 1
+    print(fields)
+
+
     return 'scen4'
 
 
@@ -593,10 +593,10 @@ def cscen3(info, fields):
 
 
 def cscen4(info, fields):
-    iter = 0
-    for i in fields.keys():
+    # iter = 0
+    # for i in fields.keys():
 
-        iter += 1
+      #   iter += 1
     return 'scen4'
 
 
@@ -610,7 +610,6 @@ def cscen5(info, fields):
 
 def docChecker(fields, id, userid):
     info = read(mode='data')[userid]
-    print(fields)
     if id == 1:
         cscen1(info=info, fields=fields)
     if id == 3:
@@ -622,7 +621,6 @@ def docChecker(fields, id, userid):
 
 
 def create(id, userid):
-    print('id = ' + str(id))
     if id == 1:
         pdf_path = os.path.dirname(__file__) + '/files/VTB_anketa.pdf'
     elif id == 2:
@@ -630,13 +628,6 @@ def create(id, userid):
                                    filename='VTB_accept.pdf')
     elif id == 3:
         pdf_path = os.path.dirname(__file__) + '/files/VTB_spravka.pdf'
-    elif id == 4:
-        pdf_path = os.path.dirname(__file__) + '/files/alpha.pdf'
-    elif id == 5:
-        pdf_path = os.path.dirname(__file__) + '/files/dom_rf_anketa.pdf'
-    elif id == 6:
-        return send_from_directory(directory=os.path.abspath(os.path.dirname(__file__) + '/files'),
-                                   filename='dow_rf_accept.pdf')
     else:
         return 'BAD ID'
 
