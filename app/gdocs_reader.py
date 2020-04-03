@@ -43,6 +43,9 @@ def read(mode):
         print('Success.')
 
     if mode == 'data':
+        if len(values) < 72:
+            for i in range(len(values), 73):
+                values.append('')
         return values
     elif mode == 'users':
         users = []
