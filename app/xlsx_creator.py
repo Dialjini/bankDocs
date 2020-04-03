@@ -38,9 +38,11 @@ def scen1(info, fields):
             if iter == 27:
                 fields[i] = info[23].split(', ')[0].split(' ')[0]
             if iter == 28:
-                fields[i] = info[23].split(', ')[1].split(' ')[0]
+                if len(info[23].split(', ')) > 1:
+                    fields[i] = info[23].split(', ')[1].split(' ')[0]
             if iter == 29:
-                fields[i] = info[23].split(', ')[2].split(' ')[0]
+                if len(info[23].split(', ')) > 2:
+                    fields[i] = info[23].split(', ')[2].split(' ')[0]
         except Exception:
             print('ok')
 
@@ -85,7 +87,8 @@ def scen1(info, fields):
         if iter == 39:
             fields[i] = info[38].split(', ')[0]
         if iter == 41:
-            fields[i] = info[38].split(', ')[1]
+            if len(info[38].split(', ')) > 1:
+                fields[i] = info[38].split(', ')[1]
         try:
             if iter == 40:
                 fields[i] = info[38].split(', ')[2]
@@ -95,14 +98,18 @@ def scen1(info, fields):
             print('ok')
         if iter == 43:
             fields[i] = info[40].split(', ')[0]
-        if iter == 44:
-            fields[i] = info[40].split(', ')[1]
-        if iter == 45:
-            fields[i] = info[40].split(', ')[2]
+        try:
+            if iter == 44:
+                fields[i] = info[40].split(', ')[1]
+            if iter == 45:
+                fields[i] = info[40].split(', ')[2]
+        except Exception:
+            print('ok')
         if iter == 46:
             fields[i] = info[42].split(', ')[0]
         if iter == 47:
-            fields[i] = info[42].split(', ')[1]
+            if len(info[42].split(', ')) > 1:
+                fields[i] = info[42].split(', ')[1]
         if iter == 48:
             fields[i] = info[46]
         if iter == 49:
@@ -162,10 +169,13 @@ def scen3(info, fields):
         try:
             if iter == 12:
                 fields[i] = info[30].split(', ')[0]
-            if iter == 14:
-                fields[i] = info[30].split(', ')[1]
-            if iter == 15:
-                fields[i] = info[30].split(', ')[2]
+            try:
+                if iter == 14:
+                    fields[i] = info[30].split(', ')[1]
+                if iter == 15:
+                    fields[i] = info[30].split(', ')[2]
+            except Exception:
+                print('')
         except Exception:
             print('')
         try:
@@ -610,6 +620,7 @@ def cscen5(info, fields):
 
 def docChecker(fields, id, userid):
     info = read(mode='data')[userid]
+    print('len = ' + str(len(info)))
     if id == 1:
         cscen1(info=info, fields=fields)
     if id == 3:

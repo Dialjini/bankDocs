@@ -54,8 +54,57 @@ def replace_doc(words, replacements, doc):
 
 def five(userid):
     info = read(mode='data')[userid]
-    print(info[48])
+    splitter = []
     doc = Document(os.path.dirname(__file__) + '/files/Form_З_502_1.docx')
+    try:
+        splitter.append(info[42].split(', ')[1])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[5].split(' ')[1])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[9].split('г. ')[1].split(', ул.')[0])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[9].split('ул. ')[1].split(', д.')[0])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[9].split(', д.')[1].split(', кв.')[0])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[9].split('кв. ')[1])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[10].split('г. ')[1].split(', ул.')[0])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[10].split('ул. ')[1].split(', д.')[0])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[10].split(', д.')[1].split(', кв.')[0])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[10].split('кв. ')[1])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[71].split('.')[1])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[71].split('.')[2])
+    except Exception:
+        splitter.append('')
+
     doc = replace_request(words=['{{Сумма_кредита}}', '{{Срок_кредита}}', '{{Первоначальный_взнос}}',
                                  '{{Оценочная стоимость}}',
                                  '{{Сумма_мат_капитала}}', '{{ФИО}}', '{{ФИО_до}}', '{{Серия_паспорта}}',
@@ -66,17 +115,17 @@ def five(userid):
                                  '{{Снилс}}', '{{Дети}}', '{{Кому_меньше}}', '{{Наименование_работодателя}}',
                                  '{{Должность}}', '{{Месяц_и_год_устройства}}', '{{Сайт_работодателя}}', '{{ИНН}}',
                                  '{{Дата_выдачи}}'],
-                          replacements=[info[53], info[55], info[54], info[42].split(', ')[1], '', info[3], info[20],
-                                        info[5].split(' ')[0], info[5].split(' ')[1], '', info[7],
-                                        info[9].split(' обл.')[0], '', info[9].split('г. ')[1].split(', ул.')[0],
-                                        info[9].split('ул. ')[1].split(', д.')[0],
-                                        info[9].split(', д.')[1].split(', кв.')[0], info[9].split('кв. ')[1], '',
-                                        info[10].split(' обл.')[0], '', info[10].split('г. ')[1].split(', ул.')[0],
-                                        info[10].split('ул. ')[1].split(', д.')[0],
-                                        info[10].split(', д.')[1].split(', кв.')[0], info[10].split('кв. ')[1],
+                          replacements=[info[53], info[55], info[54], splitter[0], '', info[3], info[20],
+                                        info[5].split(' ')[0], splitter[1], '', info[7],
+                                        info[9].split(' обл.')[0], '', splitter[2],
+                                        splitter[3],
+                                        splitter[4], splitter[5], '',
+                                        info[10].split(' обл.')[0], '', splitter[6],
+                                        splitter[7],
+                                        splitter[8], splitter[9],
                                         info[11], info[12], info[8], len(info[23].split(', ')),
                                         len(info[23].split(', ')), info[13], info[25],
-                                        info[71].split('.')[1] + ', ' + info[71].split('.')[2], info[33],
+                                        splitter[10] + ', ' + splitter[11], info[33],
                                         info[14], info[6]], doc=doc)
     doc.save(os.path.dirname(__file__) + '/files/downloaded.docx')
     return send_from_directory(directory=os.path.abspath(os.path.dirname(__file__) + '/files'),
@@ -100,11 +149,27 @@ def six(userid):
     date = datetime.today()
     info = read(mode='data')[userid]
     doc = Document(os.path.dirname(__file__) + '/files/Soglasie-TF-2216-191.docx')
+    splitter = []
+    try:
+        splitter.append(info[4].split('.')[1])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[4].split('.')[2])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[5].split(' ')[1])
+    except Exception:
+        splitter.append('')
+
+
+
     doc = replace_doc(doc=doc, words=['{{ФИО}}', '{{Число_рождения}}', '{{Месяц_рождения}}', '{{Год_рождения}}',
                                       '{{Место_рождения}}', '{{Серия_паспорта}}', '{{Номер}}', '{{Кем_выдан}}',
                                       '{{Адрес}}', '{{Снилс}}', '@', '~', '{{Дата}}'],
-                      replacements=[info[3], info[4].split('.')[0], info[4].split('.')[1], info[4].split('.')[2],
-                                    info[61], info[5].split(' ')[0], info[5].split(' ')[1], info[7], info[9],
+                      replacements=[info[3], info[4].split('.')[0], splitter[0], splitter[1],
+                                    info[61], info[5].split(' ')[0], splitter[2], info[7], info[9],
                                     info[8], 'V', '', str(date.day) + '.' + str(date.month) + '.' + str(date.year)])
     doc.save(os.path.dirname(__file__) + '/files/downloaded.docx')
     return send_from_directory(directory=os.path.abspath(os.path.dirname(__file__) + '/files'),
@@ -114,11 +179,20 @@ def seven(userid):
     date = datetime.today()
     info = read(mode='data')[userid]
     doc = Document(os.path.dirname(__file__) + '/files/spravka.docx')
+    splitter = []
+    try:
+        splitter.append(info[71].split('.')[1])
+    except Exception:
+        splitter.append('')
+    try:
+        splitter.append(info[71].split('.')[2])
+    except Exception:
+        splitter.append('')
     doc = replace_doc(doc=doc, words=['{{число}}', '{{месяц}}', '{{год}}', '{{ФИО}}', '{{ИНН}}', '{{число работы}}', '{{м.работы}}',
                                       '{{г.работы}}', '{{должность}}'],
                       replacements=[str(date.day), str(['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа',
                       'сентября', 'октября', 'ноября', 'декабря'][date.month - 1]), str(date.year)[2:], info[3], info[14],
-                                    info[71].split('.')[0], info[71].split('.')[1], info[71].split('.')[2], info[25]])
+                                    info[71].split('.')[0], splitter[0], splitter[1], info[25]])
     years = spravkaFieldPicker(date)
     doc = replace_request(words=['{{наимен орги}}', '{{ИНН}}', '{{реквизиты банка}}', '{{адрес}}', '{{сайт}}', '{{email}}',
                                  '{{телефон}}', '{{м1}}', '{{м2}}', '{{м3}}', '{{м4}}', '{{м5}}', '{{м6}}', '{{г1}}',
