@@ -43,9 +43,13 @@ def read(mode):
         print('Success.')
 
     if mode == 'data':
-        if len(values) < 72:
-            for i in range(len(values), 73):
-                values.append('')
+        print(len(values))
+        print('before - ', values)
+        for j in range(0, len(values)):
+            if len(values[j]) < 72:
+                for i in range(len(values), 73):
+                    values[j].append('')
+        print('after - ', values)
         return values
     elif mode == 'users':
         users = []
