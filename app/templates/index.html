@@ -20,11 +20,6 @@
     link.click();">Анкета ВТБ
     </button>
     <button onclick="const link = document.createElement('a');
-    link.href = `/sendPdf?id=2&userid=${document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value}`;
-    link.download = `Согласия_ВТБ.pdf`;
-    link.click();">Согласия ВТБ
-    </button>
-    <button onclick="const link = document.createElement('a');
     link.href = `/sendPdf?id=3&userid=${document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value}`;
     link.download = `Справка_ВТБ.pdf`;
     link.click();">Справка ВТБ
@@ -37,7 +32,7 @@
     <button onclick="const link = document.createElement('a');
     link.href = `/sendPdf?id=5&userid=${document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value}`;
     link.download = `Форма_3-502-1.docx`;
-    link.click();">Форма 3-502-1
+    link.click();">Заявление Открытие
     </button>
     <button onclick="const link = document.createElement('a');
     link.href = `/sendPdf?id=6&userid=${document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value}`;

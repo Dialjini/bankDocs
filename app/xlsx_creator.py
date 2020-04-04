@@ -152,10 +152,16 @@ def scen3(info, fields):
             fields[i] = info[3]
         if iter == 4:
             fields[i] = info[71].split('.')[0]
-        if iter == 5:
-            fields[i] = info[71].split('.')[1]
-        if iter == 6:
-            fields[i] = info[71].split('.')[2][2:]
+        try:
+            if iter == 5:
+                fields[i] = info[71].split('.')[1]
+        except Exception:
+            print('')
+        try:
+            if iter == 6:
+                fields[i] = info[71].split('.')[2][2:]
+        except Exception:
+            print('')
         if iter == 7:
             fields[i] = info[25]
         if iter == 8:
