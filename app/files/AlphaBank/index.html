@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ path }}style/reset.min.css">
+    <link rel="stylesheet" href="{{ path }}style/style.css">
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="left_block">
+                <div class="h1">Заявление - Анкета на ипотечный кредит</div>
+                <div class="additional">Версия №8. Утверждена Приказом № 587 от "14" мая 2019 г.</div>
+                <div class="radio_block">
+                    <div class="r_block">
+                        <input type="checkbox" name="type_customer" id="customer_borrower">
+                        <span>Заемщик</span>
+                    </div>
+                    <div class="r_block">
+                        <input type="checkbox" name="type_customer" id="customer_co-borrower">
+                        <span>Созаемщик</span>
+                    </div>
+                    <div class="r_block">
+                        <input type="checkbox" name="type_customer" id="customer_guarantor">
+                        <span>Поручитель</span>
+                    </div>
+                </div>
+            </div>
+            <div class="right_block">
+                <img src="{{ path }}images/logo.png" alt="Альфа Банк">
+            </div>
+        </header>
+        <div class="header_bottom">
+            <div class="input_block">
+                <span>Если Вы являетесь Созаемщиком/Поручителем, укажите ФИО Заемщика и степень родства с ним</span>
+                <input type="text" readonly>
+            </div>
+        </div>
+        <main class="table">
+            <div class="block">
+                <div class="title">1. ПАРАМЕТРЫ КРЕДИТНОГО ПРОДУКТА</div>
+                <div class="content">
+                    <div class="radio_block large_checkbox">
+                        <div class="r_block block_1">
+                            <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                            <span>Готовое жилье</span>
+                        </div>
+                        <div class="r_block block_1">
+                            <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                            <span>Рефинансирование</span>
+                        </div>
+                        <div class="r_block block_1">
+                            <input type="checkbox" name="parameters_credit" id="credit_refinancing_top_up">
+                            <span>Рефинансирование с TOP UP*</span>
+                        </div>
+                    </div>
+                    <div class="radio_block large_checkbox">
+                        <div class="r_block block_1">
+                            <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                            <span>Строящееся жилье</span>
+                        </div>
+                        <div class="r_block">
+                            <input type="checkbox" name="parameters_credit" id="credit_guarantor">
+                            <span>Кредит под залог имеющейся недвижимости</span>
+                        </div>
+                    </div>
+                    <div class="additional">* TOP UP - сумма, превышающая размер остатка задолженности по Рефинансируемому кредиту</div>
+                </div>
+                <div class="content">
+                    <div class="text_block">
+                        <div class="info">Клиентское предложение «Ипотека по 2 документам»:</div>
+                        <input type="checkbox" id="">
+                        <div class="additional_info">(не применимо для программы "Кредит под залог имеющейся недвижимости" и с клиентским предложением "Первоначальный взнос за счет материнского капитала")</div>
+                    </div>
+                    <div class="text_block">
+                        <div class="info">Клиентское предложение «Первоначальный взнос за счет материнского капитала»:</div>
+                        <input type="checkbox" id="">
+                        <div class="additional_info">(применимо для продукта "Готовое жилье" и "Строящееся жилье", не применимо с клиентским предложением "Ипотека по 2 документам" и при типе приобретаемого имущества "Апартаменты")</div>
+                    </div>
+                    <div class="text_block">
+                        <div class="info">Клиентское предложение «Легкое рефинансирование»:</div>
+                        <input type="checkbox" id="">
+                        <div class="additional_info">(применимо только для программы "Рефинансирование")</div>
+                    </div>
+                    <div class="info_block">
+                        <div class="i_block">
+                            <div class="i_title">
+                                <span>Запрашиваемая сумма кредита, руб.:</span>
+                            </div>
+                            <input type="text" class="input">
+                        </div>
+                        <div class="i_block">
+                            <div class="i_title">
+                                <span>Запрашиваемая сумма TOP UP, руб.:</span>
+                                <span class="additional i-additional">(Применимо для продукта "Рефинансирование с TOP UP")</span>
+                            </div>
+                            <input type="text" class="input">
+                        </div>
+                        <div class="i_block">
+                            <div class="i_title">
+                                <span>Срок кредита, лет:</span>
+                            </div>
+                            <input type="text" class="input">
+                        </div>
+                        <div class="i_block">
+                            <div class="i_title">
+                                <span>Регион приобретения недвижимости:</span>
+                            </div>
+                            <input type="text" class="input">
+                        </div>
+                    </div>
+                    <div class="info_block no-wrap">
+                        <div style="width: 49%;">
+                            <div class="i_block" style="width: 100%">
+                                <div class="i_title">
+                                    <span>Сумма первоначального взноса, руб.:</span>
+                                </div>
+                                <input type="text" class="input">
+                            </div>
+                            <div class="i_block" style="width: 100%">
+                                <div class="i_title">
+                                    <span>Стоимость объекта недвижимости, руб.:</span>
+                                </div>
+                                <input type="text" class="input">
+                            </div>
+                        </div>
+                        <div style="width: 49%;">
+                            <div class="simple_block">
+                                <span>Тип приобретаемого имущества:</span>
+                                <div class="radio_block" style="margin: 0;">
+                                    <div class="r_block">
+                                        <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                        <span style="width: 180px;">Квартира</span>
+                                    </div>
+                                    <div class="r_block">
+                                        <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                        <span style="width: 180px;">Апартаменты</span>
+                                    </div>
+                                </div>
+                                <div class="radio_block">
+                                    <div class="r_block">
+                                        <input type="checkbox" name="parameters_credit" id="credit_refinancing_top_up">
+                                        <span style="width: 180px;">Жилой дом с зем.участком</span>
+                                    </div>
+                                    <div class="r_block">
+                                        <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                        <span style="width: 180px;">Таунхаус</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">2. СТРАХОВАНИЕ</div>
+                <div class="content">
+                    <div class="text_block jc_fs">
+                        <div class="info width_fit">Полное страхование:</div>
+                        <input type="checkbox" id="">
+                        <div class="additional_info">(при отсутствии полного страхования применяется надбавка к процентной ставке)</div>
+                    </div>
+                    <div class="info_text_block">
+                        Полное страхование предусматривает страхование риска утраты (гибели) и повреждения объекта недвижимости, передаваемого в залог по получаемому кредиту, риска утраты жизни и потери трудоспособности Заемщика (Созаемщика), и риска прекращения и ограничения права собственности на объект недвижимости (при необходимости)
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">3. ПЕРСОНАЛЬНАЯ ИНФОРМАЦИЯ:</div>
+                <div class="content">
+                    <div class="input_b">
+                        <div class="input_block" style="width: 430px;">
+                            <div class="input_class">Фамилия</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 210px;">
+                            <div class="input_class">Имя</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class">Отчество</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                    <div class="input_b">
+                        <div class="input_block" style="width: 150px;">
+                            <div class="input_class">Дата рождения</div>
+                            <div style="height: 40px;" class="input"><pre>          /          /</pre></div>
+                        </div>
+                        <div class="input_block" style="width: 150px;">
+                            <div class="input_class">Гражданство</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 560px;">
+                            <div class="input_class">Место рождения</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="checkbox_small_block">
+                            <span>Пол</span>
+                            <div class="radio_block">
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                    <span>муж</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                    <span>жен</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin: 8px 0;">
+                        <div>
+                            <span>СНИЛС (при наличии):</span>
+                            <div class="inputs">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                            </div>
+                        </div>
+                        <div style="margin-left: 20px;">
+                            <span>ИНН (при наличии):</span>
+                            <div class="inputs">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                                <input type="text" name="" id="" class="input symbol">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class">При изменении Ф.И.О., укажите фамилию имя отчество до их изменения:</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">4. ПАСПОРТНЫЕ ДАННЫЕ:</div>
+                <div class="content">
+                    <div class="input_b">
+                        <div class="input_block" style="width: 235px;">
+                            <div class="input_class">Серия, номер паспорта</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 160px;">
+                            <div class="input_class">Дата выдачи</div>
+                            <div style="height: 40px;" class="input"><pre>          /          /</pre></div>
+                        </div>
+                        <div class="input_block" style="width: 160px;">
+                            <div class="input_class">Код подразделения</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class">Кем выдан</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">5. АДРЕС РЕГИСТРАЦИИ:</div>
+                <div class="content">
+                    <div class="radio_block" style="margin: 5px 0 0 0;">
+                        <div class="r_block">
+                            <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                            <span style="font-size: 12px;">постоянная регистрация</span>
+                        </div>
+                        <div class="r_block">
+                            <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                            <span style="font-size: 12px;">временная регистрация</span>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class">Адрес регистрации</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">6. АДРЕС ФАКТИЧЕСКОГО ПРОЖИВАНИЯ:</div>
+                <div class="content">
+                    <div class="radio_block" style="margin: 5px 0 0 0;">
+                        <div class="r_block">
+                            <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                            <span style="font-size: 12px;">совпадает с адресом регистрации</span>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class">Адрес фактического проживания </div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">7. КОНТАКТНАЯ ИНФОРМАЦИЯ:</div>
+                <div class="content">
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div class="input_block" style="width: 225px;">
+                            <div class="input_class">Мобильный телефон</div>
+                            <div style="height: 40px;" class="input"><pre> + 7 (            )</pre></div>
+                        </div>
+                        <div class="input_block" style="width: 225px;">
+                            <div class="input_class">Тел. по месту регистрации</div>
+                            <div style="height: 40px;" class="input"><pre> + 7 (            )</pre></div>
+                        </div>
+                        <div class="input_block" style="width: 225px;">
+                            <div class="input_class">Тел. по месту жительства</div>
+                            <div style="height: 40px;" class="input"><pre> + 7 (            )</pre></div>
+                        </div>
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class">Е-mail</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">8. СЕМЕЙНОЕ ПОЛОЖЕНИЕ:</div>
+                <div class="content flex">
+                    <div class="left_block">
+                        <div class="radio_block">
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                <span style="font-size: 12px; width: 135px">холост/не замужем</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px; width: 135px">женат/замужем</span>
+                            </div>
+                        </div>
+                        <div class="radio_block">
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                <span style="font-size: 12px; width: 135px">в разводе</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px; width: 135px">вдовец/вдова</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right_block">
+                        <div class="text_block jc_fs" style="margin-top: 1px; margin-bottom: 12px;">
+                            <div class="info width_fit">Наличие брачного договора:</div>
+                            <input type="checkbox" id="">
+                        </div>
+                        <div class="text_block jc_fs">
+                            <div class="info width_fit">Количество несовершеннолетних детей:</div>
+                            <input type="text" id="" style="width: 40px; border: 1px solid black">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">9. ОБРАЗОВАНИЕ:</div>
+                <div class="content">
+                    <div class="radio_block">
+                        <div class="r_block">
+                            <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                            <span style="font-size: 12px;">ниже среднего</span>
+                        </div>
+                        <div class="r_block">
+                            <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                            <span style="font-size: 12px;">среднее</span>
+                        </div>
+                        <div class="r_block">
+                            <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                            <span style="font-size: 12px;">среднее-специальное </span>
+                        </div>
+                        <div class="r_block">
+                            <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                            <span style="font-size: 12px;">неоконченное высшее</span>
+                        </div>
+                        <div class="r_block">
+                            <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                            <span style="font-size: 12px;">высшее</span>
+                        </div>
+                        <div class="r_block">
+                            <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                            <span style="font-size: 12px;">ученая степень / MBA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content reverse">
+                    <div class="input_b" style="padding: 10px;">
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class">Заемщик / Созаемщик / Поручитель (ФИО полностью) </div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 130px;">
+                            <div class="input_class">Дата</div>
+                            <div style="height: 40px;" class="input"><pre>          /          /</pre></div>
+                        </div>
+                        <div class="input_block" style="width: 150px;">
+                            <div class="input_class">Подпись</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">10. МЕСТО ОСНОВНОЙ РАБОТЫ:</div>
+                <div class="content">
+                    <div class="flex jc_fs al-center">
+                        <div class="info width_fit" style="margin-right: 5px; font-weight: 500;">Тип занятости:</div>
+                        <div class="radio_block">
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                <span style="font-size: 12px;">по найму</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">индивидуальный предприниматель</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">адвокат</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">нотариус</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">собственник бизнеса: размер доли</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="text" id="" style="width: 40px; border: 1px solid black">
+                                <span style="font-size: 12px;">%</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">не работаю</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex jc_fs al-center">
+                        <div class="info width_fit" style="margin-right: 5px; font-weight: 500;">Организационно-правовая форма:</div>
+                        <div class="radio_block">
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                <span style="font-size: 12px;">ООО</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">ОАО/ПАО</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">ЗАО/АО</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">Гос. учреждение</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">Иное (укажите):</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="text" id="" class="input" style="width: 282px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div class="input_block" style="width: 225px;">
+                            <div class="input_class">ИНН организации</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        
+                        <div class="input_block" style="width: 400px;">
+                            <div class="input_class">Наименование организации</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class">Сфера деятельности организации</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div class="input_block" style="width: 260px;">
+                            <div class="input_class">Тел. работодателя</div>
+                            <div style="height: 40px;" class="input"><pre> + 7 (            )</pre></div>
+                        </div>
+                        <div class="input_block" style="width: 365px;">
+                            <div class="input_class">Должность</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="simple_block">
+                            <span style="font-weight: 500;">Численность персонала:</span>
+                            <div class="radio_block" style="margin: 0;">
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                    <span style="font-size: 12px;">до 10</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                    <span style="font-size: 12px;">10-100</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing_top_up">
+                                    <span style="font-size: 12px;">101-500</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px;">более 500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px; justify-content: space-between;">
+                        <div>
+                            <span style="font-weight: 500;">Стаж на текущем месте работы:</span>
+                            <div class="radio_block" style="margin: 0;">
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                    <span style="font-size: 12px;">до 4 мес.</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                    <span style="font-size: 12px;">от 4 мес.до 6 мес.</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing_top_up">
+                                    <span style="font-size: 12px;">от 6 мес. до 1 года</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px;">1-2 года</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px;">2-5 лет</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px;">более 5 лет</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-right: 6px;">
+                            <span style="font-weight: 500;">Общий трудовой стаж:</span>
+                            <div class="radio_block" style="margin: 0;">
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                    <span style="font-size: 12px;">менее 1 года</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px;">1-2 года</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px;">2-5 лет</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px;">более 5 лет</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div>
+                            <span style="font-weight: 500;">Категория занимаемой должности:</span>
+                            <div class="radio_block" style="margin: 0;">
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                    <span style="font-size: 12px; width: 240px">руководитель высшего звена</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                    <span style="font-size: 12px; width: 190px">руководитель среднего звена</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing_top_up">
+                                    <span style="font-size: 12px; width: 265px">специалист (в т.ч.ведущий,главный, старший)</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px; width: 200px">рабочий</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_b">
+                        <div>
+                            <div class="radio_block" style="margin: 0;">
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                    <span style="font-size: 12px; width: 240px">высококвалифицированный специалист</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                    <span style="font-size: 12px; width: 190px">руководитель низшего звена</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing_top_up">
+                                    <span style="font-size: 12px; width: 265px">военнослужащий</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px; width: 200px">обслуживающий персонал</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">11. ЕЖЕМЕСЯЧНЫЕ ДОХОДЫ:</div>
+                <div class="content">
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class"><span style="font-weight: 500;">Доход от основной деятельности</span> (за вычетом налога), руб.: </div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class"><span style="font-weight: 500;">Доход от работы по совместительству</span> (за вычетом налога), руб.: </div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">12. АКТИВЫ:</div>
+                <div class="content">
+                    <span style="font-weight: 500;">Автомобиль:</span>
+                    <div class="input_b" style="margin-bottom: 5px; margin-top: -6px;">
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class"><span style="font-weight: 500;">Марка</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 160px;">
+                            <div class="input_class"><span style="font-weight: 500;">Год выпуска</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 225px;">
+                            <div class="input_class"><span style="font-weight: 500;">Оценка стоимости</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px; margin-top: -6px;">
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class"><span style="font-weight: 500;">Марка</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 160px;">
+                            <div class="input_class"><span style="font-weight: 500;">Год выпуска</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 225px;">
+                            <div class="input_class"><span style="font-weight: 500;">Оценка стоимости</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div style="margin-bottom: 5px;">
+                        <span class="info width_fit" style="margin-right: 5px; font-weight: 500;">Недвижимое имущество в собственности:</span>
+                        <div class="radio_block" style="margin: 0">
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                <span style="font-size: 12px;">Квартира/апартаменты</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">Таунхаус</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">Дом с земельным уч.</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">Иное:</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="text" id="" class="input" style="width: 170px;">
+                            </div>
+                            <div class="r_block">
+                                <span style="font-size: 12px; font-weight: 500;">Рыночная стоимость, руб.</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="text" id="" class="input" style="width: 172px;">
+                            </div>
+                        </div>
+                        <div class="input_b">
+                            <div class="input_block" style="flex-grow: 1;">
+                                <div class="input_class"><span style="font-weight: 500;">Адрес</div>
+                                <div style="height: 40px;" class="input" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;">
+                        <span class="info width_fit" style="margin-right: 5px; font-weight: 500;">Недвижимое имущество в собственности:</span>
+                        <div class="radio_block" style="margin: 0">
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                <span style="font-size: 12px;">Квартира/апартаменты</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">Таунхаус</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">Дом с земельным уч.</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">Иное:</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="text" id="" class="input" style="width: 170px;">
+                            </div>
+                            <div class="r_block">
+                                <span style="font-size: 12px; font-weight: 500;">Рыночная стоимость, руб.</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="text" id="" class="input" style="width: 172px;">
+                            </div>
+                        </div>
+                        <div class="input_b">
+                            <div class="input_block" style="flex-grow: 1;">
+                                <div class="input_class"><span style="font-weight: 500;">Адрес</div>
+                                <div style="height: 40px;" class="input" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">13. СВЕДЕНИЯ ОБ ИНОСТРАННОМ НАЛОГОВОМ РЕЗИДЕНТЕ:</div>
+                <div class="content">
+                    <div class="text_block jc_sb al-center" style="margin-top: 0;">
+                        <div class="info width_fit">Являетесь ли Вы налоговым резидентом США:</div>
+                        <div class="radio_block">
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                <span style="font-size: 12px;">ДА (заполнить форму W-9 и Согласие)</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">НЕТ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text_block jc_sb al-center" style="margin-top: 0;">
+                        <div class="info width_fit">Являетесь ли Вы иностранным налоговым резидентом (за исключением РФ/США):</div>
+                        <div class="radio_block">
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                <span style="font-size: 12px;">ДА (заполнить Приложение к Анкете)</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">НЕТ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">14. ДЛЯ ИНОСТРАННЫХ ГРАЖДАН / ЛИЦ БЕЗ ГРАЖДАНСТВА:</div>
+                <div class="content">
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div class="input_block" style="width: 180px;">
+                            <div class="input_class">Миграционная карта №</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 120px;">
+                            <div class="input_class">Дата начала</div>
+                            <div style="height: 40px;" class="input"><pre>          /          /</pre></div>
+                        </div>
+                        <div class="input_block" style="width: 120px;">
+                            <div class="input_class">Дата окончания</div>
+                            <div style="height: 40px;" class="input"><pre>          /          /</pre></div>
+                        </div>
+                    </div>
+                    <div style="font-size: 11px; margin-left: 270px; margin-top: -7px;">срок пребывания</div>
+                    <span style="font-size: 11px">Документ, подтверждающий право иностранного гражданина или лица без гражданства на пребывание (проживание) в Российской Федерации:</span>
+                    <div class="input_b" style="margin-bottom: 5px; margin-top: -5px;">
+                        <div class="input_block" style="width: 300px;">
+                            <div class="input_class">Тип документа </div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 160px;">
+                            <div class="input_class">Серия</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 300px;">
+                            <div class="input_class">Номер</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 120px;">
+                            <div class="input_class">Дата начала</div>
+                            <div style="height: 40px;" class="input"><pre>          /          /</pre></div>
+                        </div>
+                        <div class="input_block" style="width: 120px;">
+                            <div class="input_class">Дата окончания</div>
+                            <div style="height: 40px;" class="input"><pre>          /          /</pre></div>
+                        </div>
+                    </div>
+                    <div style="font-size: 11px; margin-left: 745px; margin-top: -7px;">срок действия права пребывания (проживания)</div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">15. ДОПОЛНИТЕЛЬНЫЕ СВЕДЕНИЯ:</div>
+                <div class="content">
+                    <div style="margin-right: 5px; font-weight: 500;">Поля применяются, если необходимо указать сведения о работе по совместительству:</div>
+                    <div class="flex jc_fs al-center">
+                        <div class="info width_fit" style="margin-right: 5px; font-weight: 500;">Тип занятости:</div>
+                        <div class="radio_block">
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                <span style="font-size: 12px;">по найму</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">индивидуальный предприниматель</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">адвокат</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">нотариус</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">собственник бизнеса: размер доли</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="text" id="" style="width: 40px; border: 1px solid black">
+                                <span style="font-size: 12px;">%</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">не работаю</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex jc_fs al-center">
+                        <div class="info width_fit" style="margin-right: 5px; font-weight: 500;">Организационно-правовая форма:</div>
+                        <div class="radio_block">
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                <span style="font-size: 12px;">ООО</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">ОАО/ПАО</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">ЗАО/АО</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">Гос. учреждение</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                <span style="font-size: 12px;">Иное (укажите):</span>
+                            </div>
+                            <div class="r_block">
+                                <input type="text" id="" class="input" style="width: 282px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div class="input_block" style="width: 225px;">
+                            <div class="input_class">ИНН организации</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        
+                        <div class="input_block" style="width: 400px;">
+                            <div class="input_class">Наименование организации</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class">Сфера деятельности организации</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div class="input_block" style="width: 260px;">
+                            <div class="input_class">Тел. работодателя</div>
+                            <div style="height: 40px;" class="input"><pre> + 7 (            )</pre></div>
+                        </div>
+                        <div class="input_block" style="width: 365px;">
+                            <div class="input_class">Должность</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="simple_block">
+                            <span style="font-weight: 500;">Численность персонала:</span>
+                            <div class="radio_block" style="margin: 0;">
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                    <span style="font-size: 12px;">до 10</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                    <span style="font-size: 12px;">10-100</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing_top_up">
+                                    <span style="font-size: 12px;">101-500</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px;">более 500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px; justify-content: space-between;">
+                        <div>
+                            <span style="font-weight: 500;">Стаж на текущем месте работы:</span>
+                            <div class="radio_block" style="margin: 0;">
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                    <span style="font-size: 12px;">до 4 мес.</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                    <span style="font-size: 12px;">от 4 мес.до 6 мес.</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing_top_up">
+                                    <span style="font-size: 12px;">от 6 мес. до 1 года</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px;">1-2 года</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px;">2-5 лет</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px;">более 5 лет</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div>
+                            <span style="font-weight: 500;">Категория занимаемой должности:</span>
+                            <div class="radio_block" style="margin: 0;">
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                    <span style="font-size: 12px; width: 240px">руководитель высшего звена</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                    <span style="font-size: 12px; width: 190px">руководитель среднего звена</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing_top_up">
+                                    <span style="font-size: 12px; width: 265px">специалист (в т.ч.ведущий,главный, старший)</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px; width: 200px">рабочий</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_b" style="margin-bottom: 5px;">
+                        <div>
+                            <div class="radio_block" style="margin: 0;">
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_finished_housing">
+                                    <span style="font-size: 12px; width: 240px">высококвалифицированный специалист</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing">
+                                    <span style="font-size: 12px; width: 190px">руководитель низшего звена</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_refinancing_top_up">
+                                    <span style="font-size: 12px; width: 265px">военнослужащий</span>
+                                </div>
+                                <div class="r_block">
+                                    <input type="checkbox" name="parameters_credit" id="credit_secured_property">
+                                    <span style="font-size: 12px; width: 200px">обслуживающий персонал</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="info_text_block">
+                        <span style="font-weight: 500;">Поле применяется, если необходима дополнительная информация для заполнения анкеты:</span>
+                        <br> - сведения о перерывах по стажу (обязательно отражаются перерывы по стажу за последние 10 лет продолжительностью более двух месяцев);
+                        <br> - в случае отсутствия web-сайта компании работодателя/собственника бизнеса, информация о компании работодателя/собственника бизнеса;
+                        <br> - иные сведения не вошедшие в п. 1 - 15 настоящего Заявления-Анкеты:
+                    </div>
+                    <div>
+                        <div style="border-bottom: 1px solid black; height: 20px;"></div>
+                        <div style="border-bottom: 1px solid black; height: 20px;"></div>
+                        <div style="border-bottom: 1px solid black; height: 20px;"></div>
+                        <div style="border-bottom: 1px solid black; height: 20px;"></div>
+                        <div style="border-bottom: 1px solid black; height: 20px;"></div>
+                        <div style="border-bottom: 1px solid black; height: 20px;"></div>
+                        <div style="border-bottom: 1px solid black; height: 20px;"></div>
+                        <div style="border-bottom: 1px solid black; height: 20px;"></div>
+                        <div style="border-bottom: 1px solid black; height: 20px;"></div>
+                        <div style="border-bottom: 1px solid black; height: 20px; margin-bottom: 20px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">16. СВЕДЕНИЯ ПРАВОВОГО ХАРАКТЕРА</div>
+                <div class="content">
+                    <div class="info_text_block">
+                        Нижеподписавшийся признает и согласен с тем, что:
+                        <br> 1. Кредит, на получение которого подается настоящее Заявление - Анкета, предоставляется под залог в виде первичной ипотеки (за исключением продукта "Рефинансирование");
+                        <br> 2. все сведения, содержащиеся в настоящем Заявлении - Анкете, а также все затребованные Банком документы представлены исключительно для получения Кредита, однако Банк оставляет
+                        за собой право использовать их как доказательство при судебном разбирательстве;
+                        <br> 3. Банк, его агенты и правопреемники будут полагаться на информацию, содержащуюся в Заявлении - Анкете, и я обязан вносить изменения и/или дополнения в настоящее Заявление -
+                        Анкету в случае изменения каких-либо материальных и других обстоятельств, указанных в Заявлении - Анкете, до стадии завершения ипотечной сделки;
+                        <br> 4. Банк, его агенты и правопреемники не делают никаких заявлений и не дают никаких выраженных или подразумеваемых гарантий мне по поводу приобретаемого и отчуждаемого объекта
+                        недвижимости, его состояния или стоимости, окончательных условий кредитования;
+                        <br> 5. среди сособственников объекта недвижимости, приобретаемого с использованием кредитных средств/передаваемого в залог Банку, не могут находиться несовершеннолетние и
+                        недееспособные лица;
+                        <br> 6. принятие Банком данного Заявления - Анкеты к рассмотрению, а также возможные Мои расходы на оформление необходимых для получения Кредита документов, за проведение
+                        экспертиз и т.п. не является обязательством Банка предоставить кредит или возместить понесенные Мной издержки;
+                        <br> Настоящим сообщаю, что в отношении меня отсутствуют сведения, влияющие на мою деловую репутацию. Настоящим сообщаю, что действую в собственных интересах, не имею
+                        бенефициарных владельцев и выгодаприобретателей. В ином случае я обязуюсь заполнить приложение по форме Банка. Подтверждаю, что в отношении меня не применялась и не
+                        применяется процедура банкротства, не нахожусь и не находился(-ась) под следствием.
+                        <br> Настоящим сообщаю, что не являюсь: Иностранным публичным должностным лицом; Российским публичным должностным лицом; Должностным лицом публичной международной
+                        организации или родственником такого лица. В ином случае я обязуюсь заполнить приложение по форме Банка.
+                        <br> Я даю свое согласие на открытие текущего счета ипотечного кредитования. В случае, не получения мной ипотечного кредита по любой из причин, поручаю Банку закрыть открытый текущий
+                        счет ипотечного кредитования.
+                        <br> Подтверждаю, что сведения, содержащиеся в настоящем Заявлении - Анкете на ипотечный кредит, а также в сопутствующих Приложениях к настоящему Заявлению - Анкете, являются
+                        верными и точными на нижеуказанную дату и обязуюсь незамедлительно уведомить Банк в случае изменения указанных сведений, а также о любых обстоятельствах, способных повлиять на
+                        выполнение мной или Банком обязательств по Кредиту, который может быть предоставлен на основании данного Заявления - Анкеты.
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">Cогласие на обработку персональных данных и получение сведений в БКИ (далее – Согласие):</div>
+                <div class="content">
+                    <div class="info_text_block">
+                        Я, нижеподписавшийся,: действую свободно, в своем интересе и, выражая свою волю, предоставляю АО «АЛЬФА-БАНК» (Генеральная лицензия Банка России от 16.01.2015 № 1326, адрес
+                        места нахождения: 107078, г. Москва, ул. Каланчевская, д. 27, телефоны справочной службы (телефоны доступа к Телефонному Центру «Альфа-Консультант»): для звонков из Москвы и
+                        Московской области: 8 (495) 788-88-78, для звонков с мобильных телефонов и стационарных телефонов, зарегистрированных в регионах: 8 (800) 200-00-00) (далее – Банк) право на
+                        обработку моих персональных данных, в т.ч. данных, размещаемых мной в информационно-телекоммуникационной сети Интернет (далее – сеть Интернет) на сайте Банка, включая личный
+                        кабинет, при заполнении заявления-анкеты на получение ипотечного кредита*, в т.ч. в личном кабинете сети Интернет, (далее – Анкета), в частности: фамилия, имя, отчество, год, месяц,
+                        день, место рождения, гражданство, пол, фотографическое изображение, данные документа, удостоверяющего личность (тип, серия, номер, кем и когда выдан), адреса (места жительства,
+                        места регистрации, места работы), страховой номер индивидуального лицевого счета, идентификационный номер налогоплательщика, сведения о трудовой деятельности (в т.ч., сведения о
+                        трудовом стаже и доходе), сведения о номерах телефонов, а также о банковских счетах и картах, размере задолженности перед банками, кредитную историю и любую иную информацию
+                        (в т.ч., составляющую банковскую тайну), содержащую мои персональные данные, а также персональные данные третьих лиц, с учетом получения мною согласия таких лиц, указанных
+                        мной в Анкете, а также переданных мной через Телефонный центр «Альфа-Консультант», в целях рассмотрения возможности заключения со мной договора о предоставлении ипотечного
+                        кредита и дальнейшего его исполнения (в случае заключения).
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">Я ПОДТВЕРЖДАЮ:</div>
+                <div class="content">
+                    <div class="info_text_block">
+                        1. мною получены письменные согласия физических лиц, информация о которых предоставляется мною в Банк, персональные данные которых могут содержаться в получаемых Банком от
+                        меня документах и сведениях, на обработку их персональных данных и согласие на получение кредитного отчета из бюро кредитных историй (далее – Субъекты персональных
+                        данных).Подтверждаю, что предоставил Субъектам персональных данных информацию, предусмотренную п. 3 ст. 18 Федерального закона от 27.07.2006 №152-ФЗ «О персональных
+                        данных» (далее – 152-ФЗ), а именно: наименование и адрес Банка, цель обработки персональных данных и ее правовое основание, предполагаемых пользователей персональных данных,
+                        установленные 152-ФЗ права Субъекта персональных данных, источник получения персональных данных.Обязуюсь предоставить в Банк по первому требованию полученные мною от
+                        Субъектов персональных данных согласия на обработку персональных данных и согласие на получение кредитного отчета из бюро кредитных историй;
+                        <br> 2. я проинформирован Банком о том, что если в течение 1 (Одного) года общий размер платежей по всем имеющимся у меня обязательствам по кредитным договорам, договорам займа,
+                        включая платежи по кредиту Банка, запрашиваемому в соответствии с Анкетой, будет превышать 50 процентов моего годового дохода, для меня существует риск неисполнения
+                        обязательств по договору о предоставлении ипотечного кредита и применения ко мне Банком штрафных санкций;
+                        <br> 3. что принимаю на себя риски, связанные с использованием мною и указанными выше Субъектами персональных данных незащищенных каналов связи в переписке с Банком.
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">Я СОГЛАШАЮСЬ:</div>
+                <div class="content">
+                    <div class="info_text_block">
+                        1. на размещение моих персональных данных, которые указываются работником Банка с моих слов в Анкете в программном обеспечении Банка, для определения возможности получения
+                        мной в Банке ипотечного кредита на приемлемых для меня условиях, подбора Банком условий кредитования, осуществления телефонной связи со мной для предоставления информации о
+                        результатах рассмотрения заявления на получение ипотечного кредита в Банке, предложения иных продуктов и услуг Банка и его партнеров, а также пополнение информационных баз
+                        данных Банка, и выражаю свое согласие на обработку всех указанных в Анкете персональных данных Банком на основании настоящего подписанного мной Согласия. Я подтверждаю, что
+                        все данные, предоставляемые мной в Банк, являются полными и достоверными;
+                        <br> 2. в случае отказа в получении ипотечного кредита выражаю свое согласие на использование Банком информации, относящейся к персональным данным, в частности фамилия, имя,
+                        отчество, сведения о номерах телефонов, адресах электронной почты, предусмотренных 152-ФЗ, в целях передачи информационных и рекламных сообщений об услугах Банка, в течение 2
+                        (Двух) лет с момента подписания Согласия, при этом понимаю что несу все риски, связанные с тем, что направленные сообщения могут стать доступными третьим лицам;
+                        <br> 3. что Банк имеет право получать, использовать, обрабатывать персональные данные, иную информацию в отношении меня, моего работодателя и Субъектов персональных данных из
+                        внешних источников (ЕГРЮЛ/ ЕГРИП, иных доступных Банку на законных основаниях).
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">Я ВЫРАЖАЮ СОГЛАСИЕ И УПОЛНОМОЧИВАЮ БАНК:</div>
+                <div class="content">
+                    <div class="info_text_block">
+                        - предоставлять полностью или частично сведения (персональные данные), перечень которых указан в первом абзаце Согласия, третьей стороне, с которой у Банка заключено соглашение
+                        (договор) о конфиденциальности и неразглашении информации, в целях их обработки третьей стороной, включая такую обработку третьей стороной, действующей по поручению Банка, в
+                        т.ч. для:
+                        <br> - организации документооборота в указанных в настоящем Согласии целях, в т.ч. для распознавания сканированных образов документов, предоставленных в Банк;
+                        <br> - оценки признаков кредитоспособности при рассмотрении Банком возможности заключения со мной договора о предоставлении ипотечного кредита;
+                        <br> - осуществления в дальнейшем связи со мной (по телефонам (городскому/ мобильному), по адресу регистрации/ фактического проживания, указанным в Анкете, доведенным мною до
+                        сведения Банка через Телефонный центр «Альфа-Консультант») для предоставления информации о результатах рассмотрения Банком моей Анкеты, для уточнения предоставленной мной
+                        информации (в т.ч. персональных данных);
+                        <br> - организации улучшений программного обеспечения Банка;
+                        <br> - предоставления Банку услуг по хранению документов физических лиц, созданию и хранению электронных копий указанных документов;
+                        <br> - передачи моих персональных данных и документов, представленных мною в Банк в целях предоставления ипотечного кредита, в АО «АльфаСтрахование» (местонахождение: 115162, г.
+                        Москва, ул. Шаболовка, д.31, строение Б), иную любую страховую компанию, рекомендованную Банком, (перечень страховых компаний, рекомендованных Банком, размещен на
+                        официальном сайте https://alfabank.ru) если я выберу условия кредитования по своему желанию со страхованием и необходимостью заключить соответствующий договор страхования, в
+                        целях заключения такого договора страхования и осуществления дальнейшего информационного сопровождения исполнения договора страхования. При этом порядок, объем и случаи,
+                        когда Банк должен предоставить страховой (-ым) компании (-ям) мои персональные данные, в т.ч. сведения, составляющие банковскую тайну, определяются Банком и страховой (-ыми)
+                        организацией (-ями) в соответствии с условиями договора страхования;
+                        <br> - передачи моих персональных данных и документов, представленных мною в Банк в целях предоставления ипотечного кредита в оценочную компанию, рекомендованную Банком
+                        (перечень оценочных компаний, рекомендованных Банком, размещен на официальном сайте https://alfabank.ru) для независимой оценки имущества, передаваемого в залог (ипотеку)
+                        Банку по кредиту (в объеме, необходимом для осуществления независимой оценки и/или экспертизы) и получения от указанных компаний Отчета об оценке;
+                        <br> - осуществления взаимодействия, направленного на возврат просроченной задолженности, с заемщиком/ созаемщиком/ поручителем, с любыми третьими лицами (членами семьи
+                        заемщика/ созаемщика/ поручителя, родственниками, иными проживающими с заемщиком/ созаемщиком/ поручителем лицами, соседями и любыми другими физическими лицами);
+                        <br> - осуществления услуги по SMS-оповещениям и/или почтовой и электронной рассылке в целях моего информирования о продуктах и услугах Банка;
+                        <br> - представления моих интересов в органах государственной регистрации прав на недвижимое имущество и сделок с ним
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">Я ПРЕДОСТАВЛЯЮ СВОЕ СОГЛАСИЕ БАНКУ:</div>
+                <div class="content">
+                    <div class="info_text_block">
+                        1. на осуществление взаимодействия, направленного на возврат моей просроченной задолженности, с третьими лицами, информация о которых предоставлена мной Банку;
+                        <br> 2. на обработку моих персональных данных в течение 6 (Шести) календарных месяцев со дня подачи Согласия и дальнейшее хранение моих персональных данных в течение 10 (Десяти) лет
+                        в случае отказа Банка в предоставлении мне ипотечного кредита. Согласие продолжает действовать в случае заключения со мной договора о предоставлении ипотечного кредита;
+                        <br> 3. на получение Банком из бюро кредитных историй информации об основной части моей кредитной истории в соответствии с Федеральным законом от 30.12.2004 № 218-ФЗ «О кредитных
+                        историях» в целях осуществления проверки Банком моей благонадежности и/или для формирования Банком в отношении меня кредитных предложений, принятия Банком решения о
+                        предоставлении мне кредита (-ов), заключения со мной и дальнейшего сопровождения (исполнения) договоров;
+                        <br> 4. на открытие текущего счета ипотечного кредитования. В случае неполучения мной ипотечного кредита по любой из причин поручаю Банку закрыть открытый текущий счет ипотечного
+                        кредитования.
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">Я ПОНИМАЮ И СОГЛАШАЮСЬ С ТЕМ, ЧТО:</div>
+                <div class="content">
+                    <div class="info_text_block">
+                        1. обработка персональных данных (сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передача (предоставление),
+                        обезличивание, блокирование, удаление, уничтожение персональных данных) и иные действия, предусмотренные 152-ФЗ, будут осуществляться Банком, в т.ч. с использованием средств
+                        автоматизации или без использования таких средств;<br>
+                        2. для прекращения использования Банком моих персональных данных, за исключением хранения персональных данных, предусмотренного в соответствии с законодательством РФ, мне
+                        необходимо обратиться в Банк для оформления в письменной форме отзыва Согласия.
+                        *Под ипотечным кредитом в настоящем Согласии понимается один из следующих кредитов: «Готовое жилье», «Строящееся жилье», «Кредит под залог имеющейся недвижимости»,
+                        «Рефинансирование». Конкретное наименование вида кредитного продукта, в получении которого заинтересован потенциальный заемщик/ созаемщик/ поручитель, подписавший
+                        настоящее Согласие, указывается в Анкете.
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">17. ДОПОЛНИТЕЛЬНО:</div>
+                <div class="content">
+                    <div class="info_text_block">
+                        Подтверждаю, что мне в полном объеме представлена информация о тарифах и комиссиях, связанных с рассмотрением и оформлением необходимых документов по
+                        ипотечному кредитованию, которые я обязуюсь безусловно оплачивать.
+                        Подтверждаю, что мне известны все возможные издержки, пошлины и накладные расходы, которые мне придется понести в связи с реализацией ипотечной сделки.
+                        Подтверждаю, что не использую кредитные средства в качестве первоначального взноса.
+                    </div>
+                </div>
+                <div class="content reverse">
+                    <div class="input_b" style="padding: 10px;">
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class">Заемщик / Созаемщик / Поручитель (ФИО полностью) </div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 130px;">
+                            <div class="input_class">Дата</div>
+                            <div style="height: 40px;" class="input"><pre>          /          /</pre></div>
+                        </div>
+                        <div class="input_block" style="width: 150px;">
+                            <div class="input_class">Подпись</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="title">18. ЗАПОЛНЯЕТСЯ СОТРУДНИКОМ БАНКА</div>
+                <div class="content reverse">
+                    <span style="font-size: 11px; margin-left: 10px;">Заявление(-я) - Анкету(-ы), заполненные каждым участником, принял</span>
+                    <div class="input_b" style="padding: 10px; margin-top: -10px;">
+                        <div class="input_block" style="flex-grow: 1;">
+                            <div class="input_class">ФИО сотрудника, должность </div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                        <div class="input_block" style="width: 130px;">
+                            <div class="input_class">Дата</div>
+                            <div style="height: 40px;" class="input"><pre>          /          /</pre></div>
+                        </div>
+                        <div class="input_block" style="width: 150px;">
+                            <div class="input_class">Подпись</div>
+                            <div style="height: 40px;" class="input"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

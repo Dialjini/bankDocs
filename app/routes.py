@@ -14,11 +14,12 @@ def index():
 
 @app.route('/sendPdf')
 def sendPdf():
-    print(request.args['userid'])
     if int(request.args['id']) < 4:
         return xlsx_creator.create(id=int(request.args['id']), userid=int(request.args['userid']))
-    else:
+    elif int(request.args['id']) < 8:
         return word_creator.create(id=int(request.args['id']), userid=int(request.args['userid']))
+    else:
+        return
 
 
 @app.route('/getUsers')

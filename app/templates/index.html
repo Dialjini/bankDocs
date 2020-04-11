@@ -44,6 +44,11 @@
     link.download = `Справка_о_доходах.docx`;
     link.click();">Справка о доходах
     </button>
+    <button onclick="const link = document.createElement('a');
+    link.href = `/sendPdf?id=8&userid=${document.getElementById('selector').options[document.getElementById('selector').options.selectedIndex].value}`;
+    link.download = `Альфа_банк_анкета.pdf`;
+    link.click();">Альфа банк анкета
+    </button>
 <hr>
 <select id="selector">
 </select>

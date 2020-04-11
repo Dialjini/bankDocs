@@ -655,13 +655,9 @@ def create(id, userid):
         for i in pdf.getFields().keys():
             if 'Check Box' in i:
                 checkboxes[i] = pdf.getFields()[i]
-        # place to edit checkboxes
+
         docChecker(id=id, userid=userid, fields=checkboxes)
-        # place to edit checkboxes
-        # --------------------------------------------------------------------------------------------------------------
-        # place to edit text--------------------------------------------------------------------------------------------
         docWriter(id=id, userid=userid, fields=fields)
-        # place to edit text--------------------------------------------------------------------------------------------
         pdf_writer = PdfFileWriter()
 
         for page in range(pdf.getNumPages()):

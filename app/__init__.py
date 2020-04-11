@@ -7,4 +7,4 @@ app = Flask(__name__)
 app.config.from_object(config)
 # migrate = Migrate(app, db)
 
-from app import routes
+from app import routes, pdf_creator
