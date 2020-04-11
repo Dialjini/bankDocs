@@ -48,9 +48,7 @@ html, body {
                     .input_block {
                         position: relative;
                         margin-top: 5px;
-                        &:not(:last-child) {
-                            margin-right: 10px;
-                        }
+
                         .input_class {
                             font-size: 11px;
                             font-weight: 300;
@@ -148,9 +146,7 @@ html, body {
         display: flex;
         align-items: center;
         margin-right: 13px;
-        &:last-child {
-            margin-right: 0;
-        }
+
     }
     .block_1 {
         width: 270px;
@@ -193,9 +189,7 @@ pre {
 }
 .symbol {
     width: 30px;
-    &:not(:last-child) {
-        margin-right: 5px;
-    }
+
 }
 .jc_fs {
     justify-content: flex-start !important;
